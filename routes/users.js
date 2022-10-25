@@ -22,6 +22,10 @@ router.post('/signup', (req, res) => {
         username: req.body.username,
         password: hash,
         email: req.body.email,
+        family: req.body.family,
+        budget: req.body.budget,
+        diet: req.body.diet,
+        displacement: req.body.displacement,
         token: token,
         isConnected: true,
       })

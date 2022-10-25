@@ -11,8 +11,9 @@ const userSchema = mongoose.Schema({
   isConnected: Boolean, 
   family: String,
   budget: String,
-  displacement: String, 
-  diet: String
+  diet: String,
+  displacement: [String], 
+ 
 });
 
 const User = mongoose.model('users', userSchema);
