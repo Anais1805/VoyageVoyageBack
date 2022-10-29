@@ -16,8 +16,8 @@ router.get('/:lonmin/:longitudemax/:latmin/:latitudemax', (req, res) => {
     console.log( 'latmin',latmin)
   fetch(`https://api.opentripmap.com/0.1/en/places/bbox?lon_min=${lonmin}&lon_max=${longitudemax}&lat_min=${latmin}&lat_max=${latitudemax}&kinds=foods&rate=1&format=json&apikey=${API_KEY}`)
   .then(response => response.json())
-  .then(data => {
-  res.json({result: true, foods:data})
+  .then(dataa => {
+  res.json({result: true, foods:dataa})
    
   });
 })
