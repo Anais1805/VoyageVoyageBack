@@ -11,6 +11,9 @@ var indexRouter = require('./routes/index');
 var usersRouter = require('./routes/users');
 var favoriteRouter = require('./routes/favorite')
 var foodsRouter = require('./routes/foods');
+var visitsRouter = require('./routes/visits');
+var naturalsRouter = require('./routes/naturals');
+var infosRouter = require('./routes/infos');
 
 var app = express();
 const cors = require('cors');
@@ -25,5 +28,7 @@ app.use('/', indexRouter);
 app.use('/users', usersRouter);
 app.use('/favorite', favoriteRouter);
 app.use('/foods', foodsRouter);
-
+app.use('/visits', visitsRouter);
+app.use('/naturals', naturalsRouter);
+app.use('/infos', infosRouter);
 module.exports = app;

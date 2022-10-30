@@ -85,6 +85,7 @@ res.json({visits: data}))
 
 
 router.get("/infos", (req, res) => {fetch(
+  
 `https://api.opentripmap.com/0.1/en/places/xid/Q3552599?apikey=${API_KEY}`
 ).then(resp => resp.json())
 .then(data => 
