@@ -6,8 +6,8 @@ const API_KEY = process.env.API_KEY;
 
 
 router.get('/:xid', (req, res) => {
-    const xid = req.params.xid
-  fetch(`https://api.opentripmap.com/0.1/en/places/xid/${xid}?apikey=${API_KEY}`)
+    const id = req.params.id
+  fetch(`https://api.opentripmap.com/0.1/en/places/xid/${id}&apikey=${API_KEY}`)
   .then(response => response.json())
   .then(data => {
     if(data !== null){

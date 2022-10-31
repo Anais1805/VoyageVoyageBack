@@ -1,6 +1,8 @@
 var express = require('express');
 var router = express.Router();
 
+const API_KEY = process.env.API_KEY;
+
 router.get('/:lonmin/:latmin', (req, res) => {
     const latmin = req.params.latmin;
     const lonmin = req.params.lonmin;
