@@ -9,11 +9,11 @@ router.get('/:lon/:lat', (req, res) => {
     const lat = req.params.lat
     const lon = req.params.lon
     fetch(
-        `https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${lon}&lat=${lat}&kinds=historic&cultural&rate=1&limit=100&apikey=${API_KEY}`
+        `https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${lon}&lat=${lat}&kinds=historic&cultural&rate=1&limit=100&format=json&apikey=${API_KEY}`
         ).then(resp => resp.json())
         .then(dataa => {
         if(dataa !== null){
-        res.json({result: true, visits: dataa.properties})
+        res.json({result: true, visits: dataa})
     }else {
         res.json({result: false, error: 'No visits found'})
     }
