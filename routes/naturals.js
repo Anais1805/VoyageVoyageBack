@@ -20,4 +20,17 @@ router.get('/:lon/:lat', (req, res) => {
       })
 })
 
+router.get('/:xid', (req, res) => {
+    const id = req.params.id;
+    fetch(
+      `https://api.opentripmap.com/0.1/en/places/xid/${id}&apikey=${API_KEY}`
+      ).then(resp => resp.json())
+      .then(dataa => {
+      if(dataa !== null){
+      res.json({result: true, naturalsinfos: dataa})
+  }else {
+      res.json({result: false, error: 'No xid found'})
+  }
+      })
+})
 module.exports = router;
