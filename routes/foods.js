@@ -8,7 +8,7 @@ const API_KEY = process.env.API_KEY;
 router.get('/:lon/:lat', (req, res) => {
     const lat = req.params.lat;
     const lon = req.params.lon;
-  fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${lon}&lat=${lat}&kinds=foods&rate=1&limit=100&format=json&apikey=${API_KEY}`)
+  fetch(`https://api.opentripmap.com/0.1/en/places/radius?radius=1000&lon=${lon}&lat=${lat}&kinds=foods&rate=1&limit=5&format=json&apikey=${API_KEY}`)
   .then(response => response.json())
   .then(data => {
     if(data !== null){
@@ -19,6 +19,9 @@ router.get('/:lon/:lat', (req, res) => {
    
   });
 })
+
+
+ 
 
   
  

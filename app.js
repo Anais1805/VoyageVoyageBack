@@ -15,6 +15,7 @@ var visitsRouter = require('./routes/visits');
 var naturalsRouter = require('./routes/naturals');
 var infosRouter = require('./routes/infos');
 
+
 var app = express();
 const cors = require('cors');
 app.use(cors());
@@ -31,4 +32,7 @@ app.use('/foods', foodsRouter);
 app.use('/visits', visitsRouter);
 app.use('/naturals', naturalsRouter);
 app.use('/infos', infosRouter);
+
+
+
 module.exports = app;
