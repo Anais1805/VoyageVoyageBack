@@ -27,7 +27,7 @@ router.post('/signup', (req, res) => {
         diet: req.body.diet,
         displacement: req.body.displacement,
         token: token,
-        isConnected: true,
+        isConnected: req.body.isConnected,
       })
       newUser.save().then(data =>{
         res.json({result: true, token: data.token})
