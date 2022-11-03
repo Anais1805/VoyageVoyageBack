@@ -1,7 +1,8 @@
 const mongoose = require('mongoose');
 
 const bookingSchema = mongoose.Schema({
-    userId: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
+    token: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
+    destination: {type: mongoose.Schema.Types.ObjectId, ref: 'destination '},
     date: String,
     morningVisit: String,
     lunchRestaurant: String,

@@ -11,8 +11,9 @@ router.post('/', (req, res) => {
   Booking.findOne({date: req.body.date}).then(data => {
     if(data === null){
       const newBooking = new Booking({
-        userId: req.body.userId,
+       token: req.body.token,
         date: req.body.date,
+        destination: req.body.destination,
         morningVisit: req.body.morningVisit,
         lunchRestaurant: req.body.lunchRestaurant,
         afternoonVisit: req.body.afternoonVisit,
@@ -29,12 +30,14 @@ router.post('/', (req, res) => {
 
 //Route GET : récupérer les journées d'un utilisateur
 
-router.get('/', (req, res) => {
+router.get('/:token', (req, res) => {
     Booking.find()
-      .populate('userId', 'username')
+      .populate('token')
       .then(data => {    
             res.json({ result: true, Journeys: data});      
-        });        
+        })
+             
   });
 
+  
 module.exports = router
