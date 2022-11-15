@@ -14,7 +14,6 @@ var foodsRouter = require('./routes/foods');
 var visitsRouter = require('./routes/visits');
 var naturalsRouter = require('./routes/naturals');
 var infosRouter = require('./routes/infos');
-var bookingsRouter = require('./routes/bookings')
 var destinationRouter = require('./routes/destinations')
 
 
@@ -34,7 +33,6 @@ app.use('/foods', foodsRouter);
 app.use('/visits', visitsRouter);
 app.use('/naturals', naturalsRouter);
 app.use('/infos', infosRouter);
-app.use('/bookings', bookingsRouter)
 app.use('/destinations', destinationRouter)
 
 
