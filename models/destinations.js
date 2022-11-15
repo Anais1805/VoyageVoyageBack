@@ -1,7 +1,6 @@
 const mongoose = require('mongoose');
 
 const destinationSchema = mongoose.Schema({
-    // userId: { type: mongoose.Schema.Types.ObjectId, ref: 'users' },
     token: String,
     city: String, 
     lat: String,
