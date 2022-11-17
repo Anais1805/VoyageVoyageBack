@@ -24,7 +24,6 @@ router.post("/", (req, res) => {
 // route GET : afficher les destinations planifiées par l'utilisateur
 router.get("/:token", (req, res) => {
   Destination.find({ token: req.params.token })
-    .populate("token")
     .then((data) => {
       res.json({ result: true, destination: data });
     });
